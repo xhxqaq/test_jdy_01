@@ -1,4 +1,9 @@
-import translators as ts
+"""
+    step_00:
+        1、在这里插入表的表单数据结构
+        2、命名一个表的名字
+"""
+
 
 form_structure = {
   "op": "form_update",
@@ -249,36 +254,11 @@ form_structure = {
       "type": "radiogroup"
     }
   ]
-}   # 在这里插入表的表单数据结构
-form_name = 'quality_improvement'   # 命名一个表的名字
+}
+form_name = 'quality_improvement'
 
-translate = True
 
-if translate:
-    '''
-    # 两种方法取出表单结构里的标签
-    # 第一种：
-
-    list_of_name = [i['label'] if 'items' not in i else [i['label']] + [j['label'] 
-    for j in i['items']] 
-    for i in form_structure['widgets']]
-    result = list()
-    for i in list_of_name:
-        if type(i) is list:
-            result.extend(i)
-        else:
-            result.append(i)
-    print(result)
-    # '''
-
-# 第二种：
-    list_name = []
-    for i in form_structure['widgets']:
-        list_name.append(i['label'])
-        if 'items' in i:
-            for j in i['items']:
-                list_name.append(j['label'])
-    # print(list_name)
-    for i in range(len(list_name)):
-        print(i)
-
+appid = form_structure['data']['appId']
+# print(appid)
+entryid = form_structure['data']['entryId']
+# print(entryid)
